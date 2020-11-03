@@ -8,6 +8,7 @@ import {getMovie} from '../api/tmdb-api'
 
 const MoviePage = props => {
   const { id } = props.match.params;
+  const [movie] = useMovie(id)  // NEW
   const [movie, setMovie] = useState(null);
   useEffect(() => {
     getMovie(id).then(movie => {
