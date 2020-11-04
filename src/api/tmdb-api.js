@@ -29,3 +29,15 @@ export const getMovieReviews = id => {
     .then(res => res.json())
     .then(json => json.results);
 };
+
+export const getMovieUpcoming = () => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+  )
+    .then(res => res.json())
+    .then(json =>{ 
+      console.log("Hello world 2 ")
+      console.log(json.results)
+     return json.results 
+    } );
+};

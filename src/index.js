@@ -12,6 +12,8 @@ import MovieReviewPage from "./pages/movieReviewPage";
 
 import SiteHeader from './components/siteHeader'
 
+import upcomingMoviePage from './pages/upcomingMoviePage'
+
 const App = () => {
   return (
 <BrowserRouter>
@@ -21,6 +23,9 @@ const App = () => {
       <Switch>
         <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+          
+          <Route path="/movies/upcoming" component={upcomingMoviePage} />
+          
           <Route path="/movies/:id" component={MoviePage} />
           <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />
