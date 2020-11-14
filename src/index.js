@@ -14,26 +14,36 @@ import SiteHeader from './components/siteHeader'
 
 import upcomingMoviePage from './pages/upcomingMoviePage'
 
+import MoviesContextProvider from "./contexts/moviesContext";
+
+import GenresContextProvider from "./contexts/genresContext";
+
 const App = () => {
   return (
-<BrowserRouter>
-  <div className="jumbotron">
-    <SiteHeader />      {/* New Header  */}
-    <div className="container-fluid">
-      <Switch>
-        <Route path="/reviews/:id" component={MovieReviewPage} />
-          <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-          
-          <Route path="/movies/upcoming" component={upcomingMoviePage} />
-          
-          <Route path="/movies/:id" component={MoviePage} />
-          <Route path="/" component={HomePage} />
-          <Redirect from="*" to="/" />
-        </Switch>
+   <BrowserRouter>
+      <div className="jumbotron">
+        <SiteHeader /> 
+        <div className="container-fluid">
+          <MoviesContextProvider>
+            <GenresContextProvider> 
+              <Switch>    
+
+                <Route path="/reviews/:id" component={MovieReviewPage} />
+                <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+                
+                <Route path="/movies/upcoming" component={upcomingMoviePage} />
+                
+                <Route path="/movies/:id" component={MoviePage} />
+                <Route path="/" component={HomePage} />
+                <Redirect from="*" to="/" />
+
+              </Switch>
+            </GenresContextProvider>
+          </MoviesContextProvider>
+        </div>
       </div>
-    </div>
-  </BrowserRouter>
-  );
+    </BrowserRouter>
+    );
 };
 
 ReactDOM.render(<App />, document.getElementById("root"));
