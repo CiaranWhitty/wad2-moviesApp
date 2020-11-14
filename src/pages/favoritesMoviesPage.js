@@ -6,11 +6,12 @@ import {MoviesContext} from '../contexts/moviesContext'
 const FavoriteMoviesPage = props => {
   const context = useContext(MoviesContext);
   const favorites = context.movies.filter( m => m.favorite )
+  
   return (
     <MovieListPageTemplate
-      movies={favorites}
-      title={"Favorite Movies"}
-      action={movie => <AddReviewButton movie={movie} />}
+    title={"Favorite Movies"}
+    movies={favorites}
+    action={movie => <AddReviewButton movie={movie} />}
     />
   );
 };
