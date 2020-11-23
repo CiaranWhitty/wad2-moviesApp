@@ -10,7 +10,8 @@ export default ({ movie }) => {
     getMovieReviews(movie.id).then(reviews => {
       setReviews(reviews);
     });
-  }, []);
+  }, []);// eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <table className="table table-striped table-bordered table-hover">
       <thead>

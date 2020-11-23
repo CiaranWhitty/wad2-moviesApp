@@ -5,13 +5,11 @@ import {MoviesContext} from '../contexts/moviesContext'
 
 const MovieUpcomingListPage = () => {
   const context = useContext(MoviesContext);
-  //const upcomingMovies = context.upcoming.filter( m => m.movies )
-  //const upcomingMovies = context.movies.filter( m => m.upcoming )
 
   const upcomingMovies = context.upcoming.filter((m) => {  // New
-    return !("upcoming" in m);
+    return !("watchlist" in m); // watchlist
   });
-
+  
   return (
     <PageTemplate
     title={"Upcoming Movies"}
