@@ -68,32 +68,45 @@ describe("Home Page ", () => {
         const selectedGenreId = 35;
         const selectedGenreText = "Comedy";
         const matchingMovies = filterByGenre(movies, selectedGenreId);
-        cy.get("select").select(selectedGenreText); 
+
+        cy.get('#genre').select(selectedGenreText);
+
         cy.get(".card").should("have.length", matchingMovies.length);
+        
         cy.get(".card").each(($card, index) => {
           cy.wrap($card)
             .find(".card-title")
             .should("have.text", matchingMovies[index].title);
-        });      
+        });  
+
       });
     });
     
     describe("By movie genre an title", () => {
       it("should display movies with genre and title", () => {
+        
         const selectedGenreId = 35;
         const selectedGenreText = "Comedy";
-        const matchingMoviesG = filterByGenre(movies, selectedGenreId);
         const searchString = "o";
+
+        const matchingMoviesG = filterByGenre(movies, selectedGenreId);
         const matchingMoviesT = filterByTitle(movies, searchString);
         
         cy.get("input").clear().type(searchString);
-        cy.get("select").select(selectedGenreText); 
-
+        cy.get('#genre').select(selectedGenreText);
+        
         cy.get(".card").each(($card, index) => {
+          
           cy.wrap($card)
             .find(".card-title")
-            .should("have.text", matchingMoviesG[index].title);
+            .should("have.text", matchingMoviesT[index].title)
+            
+            // Failing because its only by text "o" ddesnt take genre into account. "o" = matchingMoviesT[index].title
+
+            // Need to put "Comany" = matchingMoviesG[index].title somewhere
+
         });      
+        
       });
     });
 
