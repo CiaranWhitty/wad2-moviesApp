@@ -33,7 +33,8 @@ const FilterControls = props => {
                 />
               </div>
             </div>
- 
+
+            {/* Select - https://www.filamentgroup.com/lab/select-css.html */}
             {/* <h2>Genre:</h2> */}
             <select  class="select-css" id="genre" onChange={handleGenreChange}>
               {context.genres.map(genre => {

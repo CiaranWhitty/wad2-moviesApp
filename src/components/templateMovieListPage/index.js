@@ -9,6 +9,7 @@ const MovieListPageTemplate = ({ movies, title, action }) => {
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const genre = Number(genreFilter)
+  
   let displayedMovies = movies
     .filter(m => {
       return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
@@ -27,6 +28,7 @@ const MovieListPageTemplate = ({ movies, title, action }) => {
   return (
     <>
       <Header title={title} numMovies={displayedMovies.length} />
+      
       <FilterControls onUserInput={handleChange} numMovies={displayedMovies.length}/>
 
           <MovieList

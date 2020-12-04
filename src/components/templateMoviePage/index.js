@@ -6,8 +6,9 @@ const TemplateMoviePage = ({ movie, children }) => {
   return (
     <>
       <MovieHeader movie={movie} />
-      
+
       <div className="row">
+          
           <div className="col-3">
             <img
               src={
@@ -19,7 +20,9 @@ const TemplateMoviePage = ({ movie, children }) => {
               alt={movie.title}
             />
           </div>
+
         <div className="col-9">{children}</div>
+
       </div>
     </>
   );

@@ -8,6 +8,13 @@
   background-color: inherit !important;
 }
 
+@media only screen and (max-width: 770px) {
+  .jumbotron {
+    padding: 0rem 0rem !important;
+    background-color: inherit !important;
+}
+}
+
 .ui.huge.borderless.menu {
   height: 85px;
 }
