@@ -2,3 +2,12 @@
   padding-top: 0px;
   padding-bottom: 0px;
 }
+
+.jumbotron {
+  padding: 0rem 3rem !important;
+  background-color: inherit !important;
+}
+
+.ui.huge.borderless.menu {
+  height: 85px;
+}

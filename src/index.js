@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
+import "./index.css";
 
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"    // CHANGED
 
@@ -24,32 +25,42 @@ import WatchListMoviesPage from './pages/watchListMoviesPage'
 
 const App = () => {
   return (
-   <BrowserRouter>
-      <div className="jumbotron">
-        <SiteHeader /> 
-        <div className="container-fluid">
-          <MoviesContextProvider>
-            <GenresContextProvider> 
-              <Switch>    
-              
-                <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
-
-                <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-                <Route path="/reviews/:id" component={MovieReviewPage} />
-                <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+  <>
+  <div class="content">
+    <BrowserRouter>
+        <div className="jumbotron">
+          <SiteHeader /> 
+          <div className="container-fluid">
+            <MoviesContextProvider>
+              <GenresContextProvider> 
+                <Switch>    
                 
-                <Route path="/movies/upcoming" component={upcomingMoviePage} />
-                
-                <Route path="/movies/:id" component={MoviePage} />
-                <Route path="/" component={HomePage} />
-                <Redirect from="*" to="/" />
+                  <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
 
-              </Switch>
-            </GenresContextProvider>
-          </MoviesContextProvider>
+                  <Route exact path="/reviews/form" component={AddMovieReviewPage} />
+                  <Route path="/reviews/:id" component={MovieReviewPage} />
+                  <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+                  
+                  <Route path="/movies/upcoming" component={upcomingMoviePage} />
+                  
+                  <Route path="/movies/:id" component={MoviePage} />
+                  <Route path="/" component={HomePage} />
+                  <Redirect from="*" to="/" />
+
+                </Switch>
+              </GenresContextProvider>
+            </MoviesContextProvider>
+          </div>
         </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
+
+    {/* Background animation - https://codepen.io/chris22smith/pen/RZogMa */}
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+  </>
     );
 };
 

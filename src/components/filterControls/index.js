@@ -20,22 +20,32 @@ const FilterControls = props => {
     <div className="row bg-warning">
       <div className="col-md-12">
         <h4>
-          <span>List Filtering:</span>
-          <input
-            type="text"
-            placeholder="Title Search"
-            onChange={handleTextChange}
-          />
-          <span>Genre:</span>
-          <select id="genre" onChange={handleGenreChange}>
-            {context.genres.map(genre => {
-              return (
-                <option key={genre.id} value={genre.id}>
-                  {genre.name}
-                </option>
-              );
-            })}
-          </select>
+
+          {/* Search Bar - https://codepen.io/takaneichinose/pen/gKVXXL */}
+          <div class="flexbox">
+            <div class="search">
+              <div>
+                <input 
+                type="text" 
+                placeholder="Search . . ." 
+                onChange={handleTextChange}
+                required 
+                />
+              </div>
+            </div>
+ 
+            {/* <h2>Genre:</h2> */}
+            <select  class="select-css" id="genre" onChange={handleGenreChange}>
+              {context.genres.map(genre => {
+                return (
+                  <option key={genre.id} value={genre.id}>
+                    {genre.name}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          
         </h4>
       </div>
     </div>
