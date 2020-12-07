@@ -16,5 +16,9 @@
 }
 
 .ui.huge.borderless.menu {
-  height: 85px;
+  height: 60px;
+}
+
+.signInButton{
+  margin-top: 10px;
 }

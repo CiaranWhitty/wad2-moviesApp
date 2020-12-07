@@ -6,6 +6,10 @@ import "./siteHeader.css";
 
 import 'semantic-ui-css/semantic.min.css'
 import { Label, Dropdown, Menu, Sticky } from 'semantic-ui-react'
+
+// import ButnLogOut from '../buttons/butnLogOut'
+import ButnSignIn from '../buttons/butnSignIn'
+
 export default class MenuExampleSizeHuge extends Component {
   
   state = { activeItem: 'TMDB Client' }
@@ -94,10 +98,17 @@ export default class MenuExampleSizeHuge extends Component {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-
+            
+            <ButnSignIn />
+          
           </Menu.Menu>
+  
+          {/* <ButnLogOut /> */}
+        
         </Menu>
+        
       </Sticky>
+      
      );
   }
 };
