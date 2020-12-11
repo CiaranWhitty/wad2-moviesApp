@@ -20,7 +20,8 @@ export default function MovieUpcomingListPage() {
     movies={upcomingMovies}
     action={movie => <AddToWatchListButton movie={movie} />}
     />
-    ) : (
+    ) 
+    : (
 
     <PageTemplate
       title={"Upcoming Movies"}

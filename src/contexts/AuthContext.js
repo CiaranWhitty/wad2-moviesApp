@@ -18,7 +18,6 @@ const AuthProvider = (props) => {
   }
 
   function login(email, password) {
-    setTimeout(() => setIsAuthenticated(true), 100);
     return auth.signInWithEmailAndPassword(email, password);
     
   }
@@ -49,6 +48,7 @@ const AuthProvider = (props) => {
   const value = {
     currentUser,
     isAuthenticated,
+    setIsAuthenticated,
     login,
     signup,
     logout,
