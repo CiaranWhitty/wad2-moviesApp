@@ -22,8 +22,8 @@ const FilterControls = props => {
         <h4>
 
           {/* Search Bar - https://codepen.io/takaneichinose/pen/gKVXXL */}
-          <div class="flexbox">
-            <div class="search">
+          <div className="flexbox">
+            <div className="search">
               <div>
                 <input 
                 type="text" 
@@ -36,7 +36,7 @@ const FilterControls = props => {
 
             {/* Select - https://www.filamentgroup.com/lab/select-css.html */}
             {/* <h2>Genre:</h2> */}
-            <select  class="select-css" id="genre" onChange={handleGenreChange}>
+            <select  className="select-css" id="genre" onChange={handleGenreChange}>
               {context.genres.map(genre => {
                 return (
                   <option key={genre.id} value={genre.id}>

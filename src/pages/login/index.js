@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState} from "react";
 import { Button, Form, Message } from 'semantic-ui-react'
 
 import { useAuth } from "../../contexts/AuthContext";
@@ -23,8 +23,8 @@ export default function LoginPage() {
     try {
       setError("")
       setLoading(true)
-      await login(emailRef.current.value, passwordRef.current.value)
-      history.push("/dashboard")
+      await login(emailRef.current.value, passwordRef.current.value) 
+      history.push("u/dashboard")
     } catch {
       setError("Failed to log in")
     }

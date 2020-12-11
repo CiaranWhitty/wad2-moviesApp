@@ -14,7 +14,6 @@ export default function ButnSignIn() {
         as={Link} to='/login'
         animated 
         size="big"
-        compact="true"
         color="blue"
         >
         <Button.Content visible className="signInButton"  

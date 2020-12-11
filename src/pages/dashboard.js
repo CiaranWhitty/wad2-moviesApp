@@ -52,7 +52,7 @@ export default function Dashboard() {
               <Card.Content>
 
                 <Button 
-                as={Link} to="/update-profile"  
+                as={Link} to="/u/update-profile"  
                 size="big"
                 color="blue"
                 >

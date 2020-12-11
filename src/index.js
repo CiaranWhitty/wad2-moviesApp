@@ -1,77 +1,73 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"
+
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
-import HomePage from "./pages/homePage";
-import MoviePage from './pages/movieDetailsPage'
+import "bootstrap/dist/css/bootstrap.min.css"
+import 'semantic-ui-css/semantic.min.css'
 import "./index.css";
 
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"    // CHANGED
-
-import FavoriteMoviesPage from './pages/favoritesMoviesPage'       // NEW
-
-import MovieReviewPage from "./pages/movieReviewPage";
-
-import upcomingMoviePage from './pages/upcomingMoviePage'
-
 import MoviesContextProvider from "./contexts/moviesContext";
-
 import GenresContextProvider from "./contexts/genresContext";
-
-import AddMovieReviewPage from './pages/addMovieReviewPage'
-
-import WatchListMoviesPage from './pages/watchListMoviesPage'
-
-import Dashboard from "./pages/dashboard";
-
-import ForgotPassword from "./pages/forgotPassword";
-
-import UpdateProfile from "./components/userFunction/UpdateProfile";
+import AuthProvider from "./contexts/AuthContext";
 
 import SiteHeader from "./components/siteHeader";
+import UpdateProfile from "./components/userFunction/UpdateProfile";
 
-
-// import app from "../../fireBase/firebase";
+import HomePage from "./pages/homePage";
+import MoviePage from './pages/movieDetailsPage'
+import FavoriteMoviesPage from './pages/endPoints/favoritesMoviesPage'  
+import MovieReviewPage from "./pages/movieReviewPage";
+import upcomingMoviePage from './pages/endPoints/upcomingMoviePage'
+import AddMovieReviewPage from './pages/addMovieReviewPage'
+import WatchListMoviesPage from './pages/endPoints/watchListMoviesPage'
+import Dashboard from "./pages/dashboard";
+import ForgotPassword from "./pages/forgotPassword";
 import signupPage from './pages/signUp'
 import loginPage from './pages/login'
-import { AuthProvider } from "./contexts/AuthContext";
+import DiscoverMoviesPage from "./pages/endPoints/discoverMovies";
+
 import PrivateRoute from "./routes/PrivateRoute";
 
-import "bootstrap/dist/css/bootstrap.min.css"
-
 const App = () => {
+
   return (
   <>
-  <AuthProvider>
-    <div class="content">
+  
+    <div className="content">
       <BrowserRouter>
+      <AuthProvider>
           <div className="jumbotron">
             
-            <SiteHeader /> 
+            <SiteHeader />
 
             <div className="container-fluid">
               <MoviesContextProvider>
                 <GenresContextProvider> 
                   <Switch>    
-  
-                    <Route path="/forgotpassword" component={ForgotPassword} />
-                    <PrivateRoute path="/dashboard" component={Dashboard} />
-                    <PrivateRoute path="/update-profile" component={UpdateProfile} />
                     
-                    <Route path="/login" component={loginPage} />
-                    <Route path="/signup" component={signupPage} />
-                    
-                    
-                    <PrivateRoute exact path="/movies/favorites" component={FavoriteMoviesPage} />
-                    <PrivateRoute exact path="/movies/watchlist" component={WatchListMoviesPage} />
+                    {/* When logged in */}
+                    <PrivateRoute exact path="/u/dashboard" component={Dashboard} />
+                    <PrivateRoute exact path="/u/update-profile" component={UpdateProfile} />
+                    <PrivateRoute exact path="/u/movies/favorites" component={FavoriteMoviesPage} />
+                    <PrivateRoute exact path="/u/movies/watchlist" component={WatchListMoviesPage} />
+                    <PrivateRoute exact path="/u/movies/upcoming" component={upcomingMoviePage} />
+                    <PrivateRoute exact path="/u/movies/:id" component={MoviePage} />
+                    <PrivateRoute exact path="/u/" component={DiscoverMoviesPage} />
+                    {/* Copied: DiscoverMoviesPage, MoviePage, upcomingMoviePage */}
 
-                    <Route exact path="/reviews/form" component={AddMovieReviewPage} />
+                    <Route path="/reviews/form" component={AddMovieReviewPage} />
                     <Route path="/reviews/:id" component={MovieReviewPage} />
                     
-                    
+                    {/* Normal view */}
+                    <Route path="/forgotpassword" component={ForgotPassword} />
+                    <Route path="/login" component={loginPage} />
+                    <Route path="/signup" component={signupPage} />
                     <Route path="/movies/upcoming" component={upcomingMoviePage} />
+                    <Route path="/HomePage" component={HomePage} />
                     <Route path="/movies/:id" component={MoviePage} />
-                    <Route path="/" component={HomePage} />
-                    
+                    <Route path="/" component={DiscoverMoviesPage} />
+
                     <Redirect from="*" to="/" />
 
                   </Switch>
@@ -79,13 +75,13 @@ const App = () => {
               </MoviesContextProvider>
             </div>
           </div>
+          </AuthProvider>
         </BrowserRouter>
       </div>
     {/* Background animation - https://codepen.io/chris22smith/pen/RZogMa */}
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    </AuthProvider>
+    <div className="bg"></div>
+    <div className="bg bg2"></div>
+    <div className="bg bg3"></div>
 
   </>
     );

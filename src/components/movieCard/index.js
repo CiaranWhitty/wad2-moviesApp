@@ -26,7 +26,7 @@ const MovieCard = ({movie, action}) => {
 
           <Card.Description textAlign={"center"}>
             
-            <Card.Header centered >{movie.title}</Card.Header>
+            <Card.Header centered="true" >{movie.title}</Card.Header>
             {/* <h4 className="card-title ">{movie.title}</h4> */}
             
             <Card.Meta>

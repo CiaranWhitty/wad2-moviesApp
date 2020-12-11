@@ -75,6 +75,7 @@ export default function UpdateProfile() {
             type="password"
             placeholder="Leave blank to keep the same"
             ref={passwordRef}
+            required
             />
           </Form.Field>
           <Form.Field>
@@ -84,6 +85,7 @@ export default function UpdateProfile() {
             type="password"
             placeholder="Leave blank to keep the same"
             ref={passwordConfirmRef}
+            required
             />
           </Form.Field>
           <Form.Field>
