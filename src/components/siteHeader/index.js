@@ -1,17 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../../globals/fontawesome";
 import "./siteHeader.css";
 import 'semantic-ui-css/semantic.min.css'
 import { Label, Dropdown, Menu, Sticky } from 'semantic-ui-react'
-import { AuthContext } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 import ButnLogOut from '../buttons/butnLogOut'
 import ButnSignIn from '../buttons/butnSignIn'
 
-
 export default function SiteHeader() {
 
-  const context = useContext(AuthContext);
+  const context = useAuth();
   
   return context.isAuthenticated ? (
     

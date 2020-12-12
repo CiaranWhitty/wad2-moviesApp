@@ -12,7 +12,7 @@ export default function LoginPage() {
   const passwordRef = useRef()
 
   const {login} = useAuth()
-  const {isAuthenticated, setIsAuthenticated } = useAuth()
+  const { setIsAuthenticated } = useAuth()
   
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
@@ -24,10 +24,8 @@ export default function LoginPage() {
     try {
       setError("")
       setLoading(true)
-      console.log({isAuthenticated})
       await login(emailRef.current.value, passwordRef.current.value) 
       setIsAuthenticated(true)
-      console.log({isAuthenticated})
       history.push("u/dashboard")
     } catch {
       setError("Failed to log in")

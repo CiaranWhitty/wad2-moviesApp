@@ -2,12 +2,12 @@ import React, {useContext} from "react";
 import PageTemplate from '../../components/templateMovieListPage'
 import AddToWatchListButton from '../../components/buttons/addToWatchList'
 import { MoviesContext } from '../../contexts/moviesContext'
-import { AuthContext } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function MovieUpcomingListPage() {
 
   const contextM = useContext(MoviesContext);
-  const context = useContext(AuthContext);
+  const context = useAuth();
 
   const upcomingMovies = contextM.upcoming.filter((m) => {  // New
     return !("watchlist" in m); // watchlist
