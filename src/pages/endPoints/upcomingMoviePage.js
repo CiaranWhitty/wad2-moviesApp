@@ -2,33 +2,19 @@ import React, {useContext} from "react";
 import PageTemplate from '../../components/templateMovieListPage'
 import AddToWatchListButton from '../../components/buttons/addToWatchList'
 import { MoviesContext } from '../../contexts/moviesContext'
-import { useAuth } from "../../contexts/AuthContext";
 
 export default function MovieUpcomingListPage() {
-
-  const contextM = useContext(MoviesContext);
-  const context = useAuth();
-
-  const upcomingMovies = contextM.upcoming.filter((m) => {  // New
+  const context = useContext(MoviesContext);
+  const upcomingMovies = context.upcoming.filter((m) => {  // New
     return !("watchlist" in m); // watchlist
   });
   
-  return context.isAuthenticated ? (
+  return  (
     
     <PageTemplate
     title={"Upcoming Movies"}
     movies={upcomingMovies}
     action={movie => <AddToWatchListButton movie={movie} />}
-    />
-    ) 
-    : (
-
-    <PageTemplate
-      title={"Upcoming Movies"}
-      movies={upcomingMovies}
-      action={movie => <AddToWatchListButton movie={movie} />}
-    />
-   
- 
+    /> 
  );
 };

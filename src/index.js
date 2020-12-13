@@ -27,6 +27,12 @@ import signupPage from './pages/signUp'
 import loginPage from './pages/login'
 import DiscoverMoviesPage from "./pages/endPoints/discoverMovies";
 
+import Toprated from "./pages/endPoints/topratedMovies";
+import Popular from "./pages/endPoints/popularMovies";
+import NowPlaying from "./pages/endPoints/nowPlayingMovies";
+
+import TrendsPage from "./pages/endPoints/trendsPage";
+
 import PrivateRoute from "./routes/PrivateRoute";
 
 const App = () => {
@@ -52,9 +58,14 @@ const App = () => {
                     <PrivateRoute exact path="/u/movies/favorites" component={FavoriteMoviesPage} />
                     <PrivateRoute exact path="/u/movies/watchlist" component={WatchListMoviesPage} />
                     <PrivateRoute exact path="/u/movies/upcoming" component={upcomingMoviePage} />
+                    <PrivateRoute path="/u/movies/toprated" component={Toprated} />
+                    <PrivateRoute path="/u/movies/popular" component={Popular} />
+                    <PrivateRoute path="/u/movies/nowplaying" component={NowPlaying} />
+                    <PrivateRoute path="/u/movies/trending" component={TrendsPage} />
                     <PrivateRoute exact path="/u/movies/:id" component={MoviePage} />
                     <PrivateRoute exact path="/u/" component={DiscoverMoviesPage} />
-                    {/* Copied: DiscoverMoviesPage, MoviePage, upcomingMoviePage */}
+                    
+                    {/* Copied: DiscoverMoviesPage, MoviePage, upcomingMoviePage, Toprated, Popular, NowPlaying */}
 
                     <Route path="/reviews/form" component={AddMovieReviewPage} />
                     <Route path="/reviews/:id" component={MovieReviewPage} />
@@ -63,8 +74,14 @@ const App = () => {
                     <Route path="/forgotpassword" component={ForgotPassword} />
                     <Route path="/login" component={loginPage} />
                     <Route path="/signup" component={signupPage} />
+                    
+                    <Route path="/movies/trending" component={TrendsPage} />
                     <Route path="/movies/upcoming" component={upcomingMoviePage} />
-                    <Route path="/HomePage" component={HomePage} />
+                    <Route path="/movies/toprated" component={Toprated} />
+                    <Route path="/movies/popular" component={Popular} />
+                    <Route path="/movies/nowplaying" component={NowPlaying} />
+
+                    <Route path="/HomePage" component={HomePage} /> 
                     <Route path="/movies/:id" component={MoviePage} />
                     <Route path="/" component={DiscoverMoviesPage} />
 

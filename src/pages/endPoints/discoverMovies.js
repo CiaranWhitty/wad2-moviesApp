@@ -5,7 +5,7 @@ import AddToFavoritesButton from '../../components/buttons/addToFavorites'
 
 const DiscoverMoviesPage = () => {
   const context = useContext(MoviesContext);
-  const movies = context.movies.filter((m) => {  // New
+  const movies = context.movies.filter((m) => {
     return !("favorite" in m);
   });
 

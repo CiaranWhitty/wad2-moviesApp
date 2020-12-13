@@ -1,6 +1,6 @@
 import React from "react";
 import "./movieDetails.css";
-import { List, Header, Icon } from 'semantic-ui-react'
+import { List, Header } from 'semantic-ui-react'
 
 export default ({ movie }) => {
   return (
@@ -16,7 +16,7 @@ export default ({ movie }) => {
             <List.Icon name='dot circle' />
             <List.Content>
               Runtime (min.):
-              {movie.runtime}
+              <List.Icon name='dot circle outline' />{movie.runtime}
               </List.Content>
           </List.Item>
 
@@ -24,7 +24,7 @@ export default ({ movie }) => {
             <List.Icon name='dot circle' />
             <List.Content>
               Release Date (min.): 
-              {movie.release_date}
+              <List.Icon name='dot circle outline' /> {movie.release_date}
             </List.Content>
           </List.Item>
 

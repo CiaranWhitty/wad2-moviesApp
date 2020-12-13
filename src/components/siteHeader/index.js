@@ -43,7 +43,6 @@ export default function SiteHeader() {
         </Menu.Item> */}
 
         <Menu.Menu position='right'>
-
           <Dropdown item text='Movies'>
             <Dropdown.Menu>
               <Dropdown.Item 
@@ -61,6 +60,31 @@ export default function SiteHeader() {
               </Label>
                 Upcoming
               </Dropdown.Item>
+
+              <Dropdown.Item 
+              name='Trending'
+              as={Link} to='/u/movies/trending/'>
+                Trending
+              </Dropdown.Item>
+
+              <Dropdown.Item 
+              name='Test'
+              as={Link} to='/u/movies/toprated'>
+                Top Rated
+              </Dropdown.Item>
+
+              <Dropdown.Item 
+              name='Test'
+              as={Link} to='/u/movies/popular'>
+                Popular
+              </Dropdown.Item>
+
+              <Dropdown.Item 
+              name='Test'
+              as={Link} to='/u/movies/nowplaying'>
+                Now Playing
+              </Dropdown.Item>
+
             </Dropdown.Menu>
           </Dropdown>
           
@@ -111,6 +135,7 @@ export default function SiteHeader() {
         />
 
         <Menu.Menu position='right'>
+          
 
         <Dropdown item text='Movies'>
             <Dropdown.Menu>
@@ -119,11 +144,37 @@ export default function SiteHeader() {
               as={Link} to='/'>
                 Discover
               </Dropdown.Item>
+
               <Dropdown.Item 
               name='Upcoming'
               as={Link} to='/movies/upcoming'>
                 Upcoming
               </Dropdown.Item>
+
+              <Dropdown.Item 
+              name='Trending'
+              as={Link} to='/movies/trending/'>
+                Trending
+              </Dropdown.Item>
+              
+              <Dropdown.Item 
+              name='Test'
+              as={Link} to='/movies/toprated'>
+                Top Rated
+              </Dropdown.Item>
+
+              <Dropdown.Item 
+              name='Test'
+              as={Link} to='/movies/popular'>
+                Popular
+              </Dropdown.Item>
+
+              <Dropdown.Item 
+              name='Test'
+              as={Link} to='/movies/nowplaying'>
+                Now Playing
+              </Dropdown.Item>
+
             </Dropdown.Menu>
           </Dropdown>
 
