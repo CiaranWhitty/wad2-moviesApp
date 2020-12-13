@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getMovieReviews } from "../../api/tmdb-api";
 import { excerpt } from "../../util";
+import { Icon, Table } from 'semantic-ui-react'
 
 export default ({ movie }) => {
   const [reviews, setReviews] = useState([]);
@@ -13,38 +14,42 @@ export default ({ movie }) => {
   }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <table className="table table-striped table-bordered table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Author</th>
-          <th scope="col">Excerpt</th>
-          <th scope="col">More</th>
-        </tr>
-      </thead>
-      <tbody>
+    <>
+    <Table unstackable striped padded>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell >Author</Table.HeaderCell>
+          <Table.HeaderCell >Excerpt</Table.HeaderCell>
+          <Table.HeaderCell >More</Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+
+      <Table.Body >
         {reviews.map(r => {
-            return (
-              <tr key={r.id}>
-                <td>{r.author}</td>
-                <td>{excerpt(r.content)}</td>
-                <td>
-                  {" "}
-                  <Link
-                    to={{
-                      pathname: `/reviews/${r.id}`,
-                      state: {
-                        review: r,
-                        movie: movie
-                      }
-                    }}
-                  >
-                    Full Review
-                  </Link>
-                </td>
-              </tr>
-            );
-          })}
-      </tbody>
-    </table>
+              return (
+                <tr key={r.id}>
+                  <td>{r.author}</td>
+                  <td>{excerpt(r.content)}</td>
+                  <td>
+                    {" "}
+                    <Link
+                      to={{
+                        pathname: `/reviews/${r.id}`,
+                        state: {
+                          review: r,
+                          movie: movie
+                        }
+                      }}
+                    >
+                      Full Review
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
+      </Table.Body>
+    </Table>
+
+    </>
   );
 };

@@ -1,66 +1,96 @@
 import React from "react";
 import "./movieDetails.css";
+import { List, Header, Icon } from 'semantic-ui-react'
 
 export default ({ movie }) => {
   return (
     <>
-      <h4>Overview</h4>
-      <p>{movie.overview}</p>
-      <ul className="list-group list-group-horizontal">
-        <li key="ruh" className="list-group-item list-group-item-dark">
-          Runtime (min.)
-        </li>
-        <li key="rut" className="list-group-item ">
-          {movie.runtime}
-        </li>
-        <li key="rdh" className="list-group-item list-group-item-dark">
-          Release Date
-        </li>
-        <li key="rdv" className="list-group-item ">
-          {movie.release_date}
-        </li>
-      </ul>
+    
+      
+      <Header as='h4'>Overview</Header>
 
-      <ul className="list-group list-group-horizontal">
-        <li key="gh" className="list-group-item list-group-item-dark">
-          Genres
-        </li>
-        {movie.genres.map(g => (
-          <li key={g.name} className="list-group-item">
-            {g.name}
-          </li>
-        ))}
-      </ul>
-      <ul className="list-group list-group-horizontal">
-        <li key="slh" className="list-group-item list-group-item-dark">
-          Spoken Languages
-        </li>
-        {movie.spoken_languages.map(lang => (
-          <li key={lang.name} className="list-group-item">
-            {lang.name}
-          </li>
-        ))}
-      </ul>
-      <ul className="list-group list-group-horizontal">
-        <li key="pch" className="list-group-item list-group-item-dark">
-          Production Companies
-        </li>
-        {movie.production_companies.map(pc => (
-          <li key={pc.name} className="list-group-item">
-            {pc.name}
-          </li>
-        ))}
-      </ul>
-      <ul className="list-group list-group-horizontal">
-        <li key="pcountriesh" className="list-group-item list-group-item-dark">
-          production Countries
-        </li>
-        {movie.production_countries.map(pcountries => (
-          <li key={pcountries.name} className="list-group-item">
-            {pcountries.name}
-          </li>
-        ))}
-      </ul>
+      <p>{movie.overview}</p>
+      
+        <List divided size={"medium"}>
+          <List.Item>
+            <List.Icon name='dot circle' />
+            <List.Content>
+              Runtime (min.):
+              {movie.runtime}
+              </List.Content>
+          </List.Item>
+
+          <List.Item>
+            <List.Icon name='dot circle' />
+            <List.Content>
+              Release Date (min.): 
+              {movie.release_date}
+            </List.Content>
+          </List.Item>
+
+          <List.Item>
+            <List.Icon name='dot circle' />
+            <List.Content>
+              Genres:
+              <List.List>
+                {movie.genres.map(g => (
+                <List.Item key={g.name} bulleted>
+                <List.Icon name='dot circle outline' />
+                  {g.name}
+                </List.Item>
+                ))}
+              </List.List>
+            </List.Content>
+          </List.Item>
+
+          <List.Item>
+            <List.Icon name='dot circle' />
+            <List.Content>
+              Spoken Languages:
+              <List.List>
+                {movie.spoken_languages.map(lang => (
+                <List.Item key={lang.name}>
+                <List.Icon name='dot circle outline' />
+                  {lang.name}
+                </List.Item>
+                ))}
+              </List.List>
+            </List.Content>
+          </List.Item>
+
+          <List.Item>
+            <List.Icon name='dot circle' />
+            <List.Content>
+              Production Companies:
+              <List.List>
+                {movie.production_companies.map(pc => (
+                <List.Item key={pc.name}>
+                <List.Icon name='dot circle outline' />
+                  {pc.name} 
+                </List.Item>
+                ))}
+              </List.List>
+            </List.Content>
+          </List.Item>
+
+          <List.Item>
+            <List.Icon name='dot circle' />
+            <List.Content>
+              Production Countries:
+              <List.List>
+
+                {movie.production_countries.map(pcountries => (
+                <List.Item key={pcountries.name}>
+                <List.Icon name='dot circle outline' />
+                  {pcountries.name} 
+                </List.Item>
+                ))}
+              </List.List>
+            </List.Content>
+          </List.Item>
+
+        </List>
+
     </>
   );
 };

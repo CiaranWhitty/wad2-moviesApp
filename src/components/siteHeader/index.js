@@ -12,6 +12,9 @@ export default function SiteHeader() {
 
   const context = useAuth();
   
+  // state = { activeItem: 'TMDB Client' }
+  // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
   return context.isAuthenticated ? (
     
     <Sticky>
@@ -98,6 +101,7 @@ export default function SiteHeader() {
     <Sticky>
       {/* pointing secondary or borderless */}
       <Menu borderless size='huge' > 
+        
         <Menu.Item position='left'
           name='TMDB Client'
           //active={activeItem === 'TMDB Client'}
@@ -108,19 +112,20 @@ export default function SiteHeader() {
 
         <Menu.Menu position='right'>
 
-          <Menu.Item
-            name='Discover'
-            //active={activeItem === 'TMDB Client' && 'Discover'}
-            as={Link} to='/'
-            //onClick={this.handleItemClick}
-          />
-
-          <Menu.Item
-            name='Upcoming'
-            //active={activeItem === 'Upcoming'}
-            as={Link} to='/movies/upcoming' 
-            //onClick={this.handleItemClick}
-          />
+        <Dropdown item text='Movies'>
+            <Dropdown.Menu>
+              <Dropdown.Item 
+              name='TMDB Client'
+              as={Link} to='/'>
+                Discover
+              </Dropdown.Item>
+              <Dropdown.Item 
+              name='Upcoming'
+              as={Link} to='/movies/upcoming'>
+                Upcoming
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
           <ButnSignIn />
 

@@ -1,10 +1,13 @@
 import React from "react";
+import { Header } from 'semantic-ui-react'
 
 export default ({ review }) => {
   return (
     <>
-      <p>Review By: {review.author} </p>
+      
+      <Header as='h1'>Review By: {review.author} </Header>
       <p>{review.content} </p>
+      
     </>
   );
 };

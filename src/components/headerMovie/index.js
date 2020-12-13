@@ -1,26 +1,46 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { withRouter } from "react-router-dom";
+import { Grid, Button, Icon, Header } from 'semantic-ui-react'
 
 const MovieHeader = ({ movie, history }) => {
   return (
-    <div className="row">
-             <div className="col-2">
-          <button onClick={() => history.goBack()}>
-            <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="2x" />
-            <span>{" Back"}</span>
-          </button>
-        </div>
-      <div className="col-6 offset-3">
-        <h2>
+    <>
+        
+    <Grid columns={2} padded centered>
+        
+      <Grid.Row >
+
+        <Grid.Column >
+        
+        <Button animated size={"huge"} onClick={() => history.goBack()}>
+          <Button.Content hidden>Back</Button.Content>
+          <Button.Content visible>
+          <Icon name='arrow left' />
+          </Button.Content>
+        </Button>
+
+        </Grid.Column >
+        
+        
+
+        <Grid.Column>
+        
+        <Header as='h1'>
           {movie.title}
           {"  "}
           <a href={movie.homepage}>
-            <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
+          <Icon  name='home' />
           </a>
-        </h2>
-      </div>
-    </div>
+        </Header>
+
+        </Grid.Column>
+
+      </Grid.Row>
+
+    </Grid>
+
+    </>
   );
 };
 
