@@ -27,6 +27,8 @@ install_dependencies:
   stage: install
   only:
     - develop
+    - staging
+    - master
   script:
     - npm ci
 
@@ -34,6 +36,8 @@ bundle_app:
   stage: build
   only:
     - develop
+    - staging
+    - master
   script:
     - npm run build
   artifacts:
