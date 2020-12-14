@@ -1,5 +1,6 @@
 import React, { useEffect, createContext, useReducer } from "react";
 import { getMovies, getUpcomingMovies, getTopRatedMovies, getPopularMovies, getNow_PlayingMovies, getTrends } from "../api/tmdb-api";
+{/* Firebase: https://www.youtube.com/watch?v=PKwu15ldZ7k */}
 
 export const MoviesContext = createContext(null);
 
