@@ -5,7 +5,7 @@ image: cypress/browsers:node12.0.0-chrome73
 stages:
   - install
   - build
-  - exercise
+#  - exercise
   - test
 
 variables:
@@ -25,16 +25,22 @@ cache:
 
 install_dependencies:
   stage: install
+  only:
+    - develop
   script:
     - npm ci
 
 bundle_app:
   stage: build
+  only:
+    - develop
   script:
     - npm run build
   artifacts:
     paths:
       - build/
+
+# tests
 
 e2etest:    
   stage: test
@@ -45,7 +51,7 @@ e2etest:
       # start the server in the background
     - npm run start:ci
 
-# Jobs
+
 
 # build_jobX:
 #   stage: build
