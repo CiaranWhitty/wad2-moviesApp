@@ -29,6 +29,7 @@ export default function Signup() {
       setMessage("")
       setLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value)
+      setMessage("Congratulations Account created")
     } catch {
       setMessage("Failed to create an account")
     }
