@@ -14,7 +14,7 @@ export default function LoginPage() {
   const {login} = useAuth()
   const { setIsAuthenticated } = useAuth()
   
-  const [error, setError] = useState("")
+  const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
   
@@ -22,13 +22,13 @@ export default function LoginPage() {
     e.preventDefault()
 
     try {
-      setError("")
+      setMessage("")
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value) 
       setIsAuthenticated(true)
       history.push("u/dashboard")
     } catch {
-      setError("Failed to log in")
+      setMessage("Failed to log in")
       setIsAuthenticated(false)
     }
     
@@ -41,7 +41,7 @@ export default function LoginPage() {
       <div id="signinContainer">
         <h2>SignIn</h2>
 
-        {error && <Message warning={true}>{error}</Message>}
+        {message && <Message warning={true}>{message}</Message>}
         <Form onSubmit={handleSubmit}>
           <Form.Field>
             <label>Email Address:</label>

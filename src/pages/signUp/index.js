@@ -14,7 +14,7 @@ export default function Signup() {
 
   const {signup} = useAuth()
   
-  const [error, setError] = useState("")
+  const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
 
@@ -22,16 +22,16 @@ export default function Signup() {
     e.preventDefault()
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords do not match")
+      return setMessage("Passwords do not match")
     }
 
     try {
-      setError("")
+      setMessage("")
       setLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
+      setMessage("Congratulations Account created")
     } catch {
-      setError("Failed to create an account")
+      setMessage("Failed to create an account")
     }
 
     setLoading(false)
@@ -44,7 +44,7 @@ export default function Signup() {
         <h2>SignUp</h2>
         {/* testing user */}
         {/* {currentUser.email} */}
-        {error && <Message warning={true}>{error}</Message>}
+        {message && <Message warning={true}>{message}</Message>}
         <Form onSubmit={handleSubmit}>
           <Form.Field>
             <label>Email Address:</label>

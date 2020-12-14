@@ -16,32 +16,32 @@ describe("User-Auth", () => {
     
   });
 
-  // describe("From the home page", () => {
-  //   beforeEach(() => {
-  //     cy.visit("/");
-  //   });
-  //   it("should navigate to login page", () => {
-  //     cy.get('.huge').find(".right.menu");
-  //     cy.get('.blue').click();
-  //     cy.url().should("include", `/login`);
+  describe("From the home page", () => {
+    beforeEach(() => {
+      cy.visit("/");
+    });
+    it("should navigate to login page", () => {
+      cy.get('.huge').find(".right.menu");
+      cy.get('.blue').click();
+      cy.url().should("include", `/login`);
 
-  //   });
-  //   it("should navigate to signup page", () => {
-  //     cy.get('.huge').find(".right.menu");
-  //     cy.get('.blue').click();
-  //     cy.get('label > a').click();
-  //     cy.url().should("include", `/signup`);
+    });
+    it("should navigate to signup page", () => {
+      cy.get('.huge').find(".right.menu");
+      cy.get('.blue').click();
+      cy.get('label > a').click();
+      cy.url().should("include", `/signup`);
 
-  //   });
-  //   it("should navigate to reset password page", () => {
-  //     cy.get('.huge').find(".right.menu");
-  //     cy.get('.blue').click();
-  //     cy.get('.form > :nth-child(3) > a').click();
-  //     cy.url().should("include", `/forgotPassword`);
+    });
+    it("should navigate to reset password page", () => {
+      cy.get('.huge').find(".right.menu");
+      cy.get('.blue').click();
+      cy.get('.form > :nth-child(3) > a').click();
+      cy.url().should("include", `/forgotPassword`);
 
-  //   });
+    });
 
-  // });
+  });
 
   describe("User Auth", () => {
     beforeEach(() => {
@@ -50,8 +50,8 @@ describe("User-Auth", () => {
       cy.get('.blue').click();
 
     });
-    it("should signup ", () => {
-      const email = "Test@test.com";
+    it("should Create an Account ", () => {
+      const email = "Test@test.com"; // Change this to a random email to be successful, it will fail if ran twice
       const password = "password";
       
       cy.get('label > a').click();
@@ -59,7 +59,7 @@ describe("User-Auth", () => {
       cy.get(':nth-child(2) > input').type(password);
       cy.get(':nth-child(3) > input').type(password);
       cy.get('.form > .ui').click();
-      // cy.get('.message').contains("");
+      cy.get('.message').contains("Congratulations Account created");
 
     });
     it("should login ", () => {
@@ -78,14 +78,11 @@ describe("User-Auth", () => {
       cy.get('.form > :nth-child(3) > a').click();
       cy.get(':nth-child(1) > input').type(email);
       cy.get('.form > .ui').click();
-      cy.get('.message').contains("Check your inbox for further instructions");
+      cy.get('.message').contains("Check your inbox for further instructions" );
       
     });
 
   });
-
-
-
 
   // describe("From the Favorites page", () => {
   //   beforeEach(() => {
