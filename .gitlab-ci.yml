@@ -44,6 +44,9 @@ bundle_app:
 
 e2etest:    
   stage: test
+  only:
+    - staging
+    - master
   before_script:
     - npm install -g http-server
     - npm install cypress
