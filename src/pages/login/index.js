@@ -39,7 +39,7 @@ export default function LoginPage() {
     <>
     
       <div id="signinContainer">
-        <h2>SignIn Page</h2>
+        <h2>SignIn</h2>
 
         {error && <Message warning={true}>{error}</Message>}
         <Form onSubmit={handleSubmit}>

@@ -1,6 +1,8 @@
 import firebase from "firebase/app"
 import "firebase/auth"
 
+{/* Firebase: https://www.youtube.com/watch?v=PKwu15ldZ7k */}
+
 const app = firebase.initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,

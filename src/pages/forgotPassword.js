@@ -32,7 +32,7 @@ export default function ForgotPassword() {
     <>
     
       <div id="signinContainer">
-        <h2>Reset Password Page</h2>
+        <h2>Reset Password</h2>
 
         {error && <Message warning={true}>{error}</Message>}
         {message && <Message warning={false}>{message}</Message>}

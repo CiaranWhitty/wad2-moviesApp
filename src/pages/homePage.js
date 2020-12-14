@@ -5,7 +5,7 @@ const HomePage = () => {
 
   return (
     <PageTemplate
-      title="Discover Movies"
+      title="Home Page"
       
     />
   );

@@ -52,7 +52,7 @@ export default function UpdateProfile() {
     <>
           
       <div id="signupContainer">
-        <h2>UpdateProfile Page</h2>
+        <h2>UpdateProfile</h2>
         {/* testing user */}
         {/* {currentUser.email} */}
         {error && <Message warning={true}>{error}</Message>}

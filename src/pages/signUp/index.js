@@ -41,7 +41,7 @@ export default function Signup() {
     <>
           
       <div id="signupContainer">
-        <h2>SignUp Page</h2>
+        <h2>SignUp</h2>
         {/* testing user */}
         {/* {currentUser.email} */}
         {error && <Message warning={true}>{error}</Message>}

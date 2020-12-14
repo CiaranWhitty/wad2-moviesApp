@@ -20,7 +20,7 @@ const TemplateMoviePage = ({ movie, children }) => {
             }
             className="movie"
             alt={movie.title}
-            href={movie.homepage}
+            href={movie.homepage || "/"} 
                 />
           </Grid.Column>
           <Grid.Column>
