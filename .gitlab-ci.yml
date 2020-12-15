@@ -58,6 +58,22 @@ e2etest:
       # start the server in the background
     - npm run start:ci
 
+    
+# cypress_dashboard:    
+#   stage: test
+#   only:
+#     - staging
+#     - master
+#   before_script:
+#   - npm install -g http-server
+#   - npm install cypress
+#   script:
+#       # run cypress dashboard
+#     - npm run 
+
+
+
+
 
 
 # build_jobX:
