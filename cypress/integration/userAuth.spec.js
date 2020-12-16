@@ -25,7 +25,7 @@ describe("User-Auth", () => {
 
     });
     it("should Create an Account ", () => {
-      const email = "Test@test.com"; // Change this to a random email to be successful, it will fail if ran twice
+      const email = "Test123@test.com"; // Change this to a random email to be successful, it will fail if ran twice
       const password = "password";
       
       cy.get('label > a').click();
@@ -39,7 +39,7 @@ describe("User-Auth", () => {
 
     });
     it("should login ", () => {
-      const email = "Test1@test.com";
+      const email = "Test123@test.com";
       const password = "password";
 
       cy.get(':nth-child(1) > input').type(email);
@@ -51,7 +51,7 @@ describe("User-Auth", () => {
       
     });
     it("should reset password ", () => {
-      const email = "Test@test.com";
+      const email = "Test123@test.com";
 
       cy.get('.form > :nth-child(3) > a').click();
       cy.get(':nth-child(1) > input').type(email);
