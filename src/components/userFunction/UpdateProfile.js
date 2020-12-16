@@ -91,7 +91,7 @@ export default function UpdateProfile() {
           <Form.Field>
             <Link to="/dashboard">Cancel</Link>     
           </Form.Field>
-          <Button disabled={loading} class="btnSignUp" type='submit'>Update</Button>
+          <Button disabled={loading} className="btnSignUp" type='submit'>Update</Button>
         </Form>
 
       </div>

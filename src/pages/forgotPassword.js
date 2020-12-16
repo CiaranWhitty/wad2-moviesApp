@@ -48,7 +48,7 @@ export default function ForgotPassword() {
           <Form.Field>
             <label>Already have an account? <Link to="/login">Log In</Link></label>      
           </Form.Field>
-          <Button disabled={loading} class="btnSignUp" type='submit'>Reset</Button>
+          <Button disabled={loading} className="btnSignUp" type='submit'>Reset</Button>
         </Form>
 
       </div>

@@ -69,7 +69,7 @@ export default function LoginPage() {
           <Form.Field>
             <label>Need an account? <Link to="/signup">Sign Up</Link></label>      
           </Form.Field>
-          <Button disabled={loading} class="btnSignUp" type='submit'>Log In</Button>
+          <Button disabled={loading} className="btnSignUp" type='submit'>Log In</Button>
         </Form>
 
       </div>
