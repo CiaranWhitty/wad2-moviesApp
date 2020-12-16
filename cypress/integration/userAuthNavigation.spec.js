@@ -51,7 +51,6 @@ describe("User-Auth-Navigation", () => {
       cy.url().should("include", `/u/movies/trending`);
       cy.get('.big').click();
       cy.url().should("include", `/`);
-      cy.get("h2").contains("Discover Movies");
 
     });
 
