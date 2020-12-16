@@ -78,7 +78,7 @@ export default function Signup() {
           <Form.Field>
             <label>Already have an account? <Link to="/login">Log In</Link></label>      
           </Form.Field>
-          <Button disabled={loading} class="btnSignUp" type='submit'>Sign Up</Button>
+          <Button disabled={loading} className="btnSignUp" type='submit'>Sign Up</Button>
         </Form>
 
       </div>

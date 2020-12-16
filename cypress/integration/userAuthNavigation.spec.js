@@ -18,7 +18,7 @@ describe("User-Auth-Navigation", () => {
 
   describe("From the dashboard page", () => {
     beforeEach(() => {
-      const email = "Test123@test.com";
+      const email = "Test@test.com";
       const password = "password";
 
       cy.visit("/");
@@ -59,7 +59,7 @@ describe("User-Auth-Navigation", () => {
 
   describe("From the Favorites page", () => {
     beforeEach(() => {
-      const email = "Test123@test.com";
+      const email = "Test@test.com";
       const password = "password";
 
       cy.visit("/");
