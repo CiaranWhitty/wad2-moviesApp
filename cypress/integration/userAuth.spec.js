@@ -3,6 +3,7 @@ const movieId = 497582; // Enola Holmes movie id
 let reviews;
 
 describe("User-Auth", () => {
+
   before(() => {
     cy.request(
       `https://api.themoviedb.org/3/discover/movie?api_key=${Cypress.env(
@@ -16,7 +17,7 @@ describe("User-Auth", () => {
     
   });
 
-  describe("User Auth", () => {
+  describe("User features", () => {
     beforeEach(() => {
       cy.visit("/");
       cy.get('.huge').find(".right.menu");
@@ -32,16 +33,20 @@ describe("User-Auth", () => {
       cy.get(':nth-child(2) > input').type(password);
       cy.get(':nth-child(3) > input').type(password);
       cy.get('.form > .ui').click();
+      cy.url().should("include", `/signup`);
+
       //cy.get('.message').contains("Congratulations Account created");
 
     });
     it("should login ", () => {
-      const email = "Test@test.com";
+      const email = "Test1@test.com";
       const password = "password";
 
       cy.get(':nth-child(1) > input').type(email);
       cy.get(':nth-child(2) > input').type(password);
       cy.get('.form > .ui').click();
+      cy.url().should("include", `/u/dashboard`);
+
       // cy.get('.message').contains("");
       
     });
