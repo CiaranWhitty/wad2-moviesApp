@@ -16,9 +16,7 @@ import SiteHeader from "./components/siteHeader";
 
 import HomePage from "./pages/homePage";
 
-
-
-//import MoviePage from './pages/movieDetailsPage'
+import MoviePage from './pages/movieDetailsPage'
 //import MovieReviewPage from "./pages/movieReviewPage";
 import signupPage from './pages/signUp'
 import loginPage from './pages/login'
@@ -29,7 +27,7 @@ import loginPage from './pages/login'
 //import Toprated from "./pages/endPoints/topratedMovies";
 //import Popular from "./pages/endPoints/popularMovies";
 //import NowPlaying from "./pages/endPoints/nowPlayingMovies";
-// import TrendsPage from "./pages/endPoints/trendsPage";
+//import TrendsPage from "./pages/endPoints/trendsPage";
 
 //import FavoriteMoviesPage from './pages/endPoints/favoritesMoviesPage'  
 //import upcomingMoviePage from './pages/endPoints/upcomingMoviePage'
@@ -50,7 +48,7 @@ const Dashboard = lazy(() => import("./pages/dashboard"));
 // const ForgotPassword = lazy(() => import("./pages/forgotPassword"));
 // const UpdateProfile = lazy(() => import("./components/userFunction/UpdateProfile"));
 
-const MoviePage = lazy(() => import("./pages/movieDetailsPage"));
+// const MoviePage = lazy(() => import("./pages/movieDetailsPage"));
 const MovieReviewPage = lazy(() => import("./pages/movieReviewPage"));
 const AddMovieReviewPage = lazy(() => import("./pages/addMovieReviewPage"));
 // const signupPage = lazy(() => import("./pages/signUp"));
